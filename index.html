@@ -2,16 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Malla Interactiva</title>
+  <title>Malla Interactiva QF</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Malla Interactiva</h1>
-  
-  <div class="malla">
-    <button class="ramo" id="quimica1" onclick="desbloquear('quimica2')">Química I</button>
-    <button class="ramo bloqueado" id="quimica2" disabled>Química II</button>
-    <button class="ramo bloqueado" id="bioquimica" disabled>Bioquímica</button>
+  <h1>Malla Interactiva QF - Coni</h1>
+
+  <!-- Semestre 1 -->
+  <div class="semestre">
+    <h2>Semestre 1</h2>
+    <div class="malla">
+      <button class="ramo" id="quimica1" onclick="desbloquear(['quimica2','organica'])">Química General I</button>
+      <button class="ramo" id="biocelular" onclick="desbloquear(['fisiologia'])">Biología Celular</button>
+      <button class="ramo" id="introduccion">Introducción a las Ciencias Farmacéuticas</button>
+      <button class="ramo" id="matematicas" onclick="desbloquear(['calculo','bioestadistica','fisica'])">Matemáticas</button>
+      <button class="ramo" id="integrado" onclick="desbloquear(['fundamentos'])">Integrado de Habilidades Científicas</button>
+      <button class="ramo" id="antropologia" onclick="desbloquear(['etica'])">Antropología</button>
+    </div>
+  </div>
+
+  <!-- Semestre 2 -->
+  <div class="semestre">
+    <h2>Semestre 2</h2>
+    <div class="malla">
+      <button class="ramo bloqueado" id="quimica2" onclick="desbloquear(['analitica','fisicoquimica'])" disabled>Química General II</button>
+      <button class="ramo" id="bioestadistica">Bioestadística</button>
+      <button class="ramo" id="fisica">Física</button>
+      <button class="ramo" id="calculo">Cálculo Diferencial</button>
+      <button class="ramo" id="fundamentos">Fundamentos del Quehacer Farmacéutico</button>
+      <button class="ramo bloqueado" id="etica" onclick="desbloquear(['persona'])" disabled>Ética</button>
+    </div>
+  </div>
+
+  <!-- Semestre 3 -->
+  <div class="semestre">
+    <h2>Semestre 3</h2>
+    <div class="malla">
+      <button class="ramo bloqueado" id="analitica" onclick="desbloquear(['instrumental'])" disabled>Química Analítica Cualicuantitativa</button>
+      <button class="ramo bloqueado" id="organica" onclick="desbloquear(['bioquimica','organica_avanzada'])" disabled>Química Orgánica</button>
+      <button class="ramo bloqueado" id="fisiologia" onclick="desbloquear(['fisiopatologia'])" disabled>Fisiología Integrada</button>
+      <button class="ramo bloqueado" id="fisicoquimica" onclick="desbloquear(['tecfarma1'])" disabled>Fisicoquímica</button>
+      <button class="ramo" id="salud">Salud Poblacional</button>
+      <button class="ramo" id="gestion">Gestión Personal y Habilidades</button>
+    </div>
+  </div>
+
+  <!-- Semestre 4 -->
+  <div class="semestre">
+    <h2>Semestre 4</h2>
+    <div class="malla">
+      <button class="ramo" id="instrumental">Análisis Químico Instrumental</button>
+      <button class="ramo bloqueado" id="bioquimica" onclick="desbloquear(['microbiologia'])" disabled>Bioquímica General</button>
+      <button class="ramo bloqueado" id="fisiopatologia" onclick="desbloquear(['farmacologia1'])" disabled>Fisiopatología</button>
+      <button class="ramo bloqueado" id="organica_avanzada" onclick="desbloquear(['quimicafarma1'])" disabled>Química Orgánica Avanzada</button>
+      <button class="ramo" id="epidemiologia">Epidemiología</button>
+    </div>
+  </div>
+
+  <!-- Semestre 5 -->
+  <div class="semestre">
+    <h2>Semestre 5</h2>
+    <div class="malla">
+      <button class="ramo" id="salud_digital">Salud Digital</button>
+      <button class="ramo" id="microbiologia">Microbiología General</button>
+      <button class="ramo bloqueado" id="farmacologia1" onclick="desbloquear(['farmacologia2'])" disabled>Farmacología I</button>
+      <button class="ramo bloqueado" id="tecfarma1" onclick="desbloquear(['tecfarma2'])" disabled>Tecnología Farmacéutica I</button>
+      <button class="ramo bloqueado" id="quimicafarma1" onclick="desbloquear(['quimicafarma2'])" disabled>Química Farmacéutica I</button>
+      <button class="ramo" id="persona">Persona y Sociedad</button>
+    </div>
+  </div>
+
+  <!-- Semestre 6 -->
+  <div class="semestre">
+    <h2>Semestre 6</h2>
+    <div class="malla">
+      <button class="ramo" id="bioetica">Bioética</button>
+      <button class="ramo bloqueado" id="farmacologia2" onclick="desbloquear(['farmaclinica1','toxicologia'])" disabled>Farmacología II</button>
+      <button class="ramo bloqueado" id="tecfarma2" onclick="desbloquear(['legislacion'])" disabled>Tecnología Farmacéutica II</button>
+      <button class="ramo bloqueado" id="quimicafarma2" onclick="desbloquear(['fitoterapia'])" disabled>Química Farmacéutica II</button>
+      <button class="ramo" id="electivo1">Electivo 1 Formación Integral</button>
+    </div>
+  </div>
+
+  <!-- Semestre 7 -->
+  <div class="semestre">
+    <h2>Semestre 7</h2>
+    <div class="malla">
+      <button class="ramo" id="investigacion">Metodología de la Investigación</button>
+      <button class="ramo" id="control_calidad" onclick="desbloquear(['biofarmacia'])">Control y Aseguramiento de Calidad</button>
+      <button class="ramo bloqueado" id="farmaclinica1" onclick="desbloquear(['farmaclinica2'])" disabled>Farmacia Clínica I</button>
+      <button class="ramo" id="legislacion">Legislación Farmacéutica</button>
+      <button class="ramo" id="fitoterapia">Farmacognosia y Fitoterapia</button>
+      <button class="ramo" id="electivo2">Electivo 2 Formación Integral</button>
+    </div>
+  </div>
+
+  <!-- Semestre 8 -->
+  <div class="semestre">
+    <h2>Semestre 8</h2>
+    <div class="malla">
+      <button class="ramo" id="biofarmacia">Biofarmacia</button>
+      <button class="ramo" id="farmaclinica2">Farmacia Clínica II</button>
+      <button class="ramo" id="toxicologia">Toxicología</button>
+      <button class="ramo" id="farmacia_asistencial">Farmacia Asistencial</button>
+    </div>
+  </div>
+
+  <!-- Semestre 9 -->
+  <div class="semestre">
+    <h2>Semestre 9</h2>
+    <div class="malla">
+      <button class="ramo" id="gestion_marketing">Gestión y Marketing Farmacéutico</button>
+      <button class="ramo" id="vigilancia">Farmacovigilancia y Tecnovigilancia</button>
+      <button class="ramo" id="electivo3">Electivo 3 Formación Integral</button>
+    </div>
+  </div>
+
+  <!-- Semestre 10 -->
+  <div class="semestre">
+    <h2>Semestre 10</h2>
+    <div class="malla">
+      <button class="ramo" id="internado">Internado</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
